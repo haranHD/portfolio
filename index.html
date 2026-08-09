@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hari Haran — Full-Stack Developer</title>
+    <meta name="description" content="Full-Stack Developer specializing in business applications, APIs and system integration." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('portfolio_theme');
+          var isDark = saved === 'dark';
+          var root = document.documentElement;
+          var lightVars = {
+            '--color-bg': '#ffffff',
+            '--color-bg-elevated': '#ffffff',
+            '--color-bg-elevated2': '#f8fafc',
+            '--color-border': '#e2e8f0',
+            '--color-border-light': '#cbd5e1',
+            '--color-ink': '#0f172a',
+            '--color-ink-secondary': '#1e293b',
+            '--color-dim': '#475569',
+            '--color-faint': '#64748b',
+            '--color-accent': '#2563eb',
+            '--color-accent-hover': '#1d4ed8',
+            '--color-accent-light': '#eff6ff',
+            '--color-accent-ink': '#ffffff'
+          };
+          var darkVars = {
+            '--color-bg': '#0a0a0b',
+            '--color-bg-elevated': '#131316',
+            '--color-bg-elevated2': '#19191d',
+            '--color-border': '#242428',
+            '--color-border-light': '#2e2e33',
+            '--color-ink': '#ededef',
+            '--color-ink-secondary': '#d1d1d6',
+            '--color-dim': '#96969e',
+            '--color-faint': '#64748b',
+            '--color-accent': '#3b82f6',
+            '--color-accent-hover': '#2563eb',
+            '--color-accent-light': 'rgba(59, 130, 246, 0.15)',
+            '--color-accent-ink': '#ffffff'
+          };
+          var vars = isDark ? darkVars : lightVars;
+          for (var key in vars) {
+            root.style.setProperty(key, vars[key]);
+          }
+          if (isDark) {
+            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
+          } else {
+            root.classList.remove('dark');
+            root.setAttribute('data-theme', 'light');
+            localStorage.removeItem('theme');
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
