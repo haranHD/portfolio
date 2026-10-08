@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <div className="bg-bg text-ink min-h-screen font-body transition-colors duration-200">
+      <div className="bg-bg text-ink min-h-screen font-body transition-colors duration-200 w-full overflow-x-hidden">
         <Navbar />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

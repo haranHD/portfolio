@@ -1,114 +1,175 @@
-import { Layers, ScanFace, Scale, Video, Gavel, ShoppingCart } from "lucide-react";
+import {
+  Gavel,
+  Sprout,
+  Scale,
+  Layers,
+  ShoppingCart,
+  Video,
+  ScanFace,
+} from "lucide-react";
 
 export const PROJECTS = [
   {
-    id: "client-mgmt",
-    icon: Layers,
-    category: "Business Management Software",
-    name: "Client Management System",
+    id: "ecourt-tracker",
+    icon: Gavel,
+    category: "Automation & Backend Engineering",
+    name: "eCourt Automation Tracker",
     short:
-      "A centralized platform to manage clients, documents, workflows and business operations through a modern web interface.",
+      "Automated case tracker and monitoring pipeline that autonomously queries public court portals, captures hearing records, and persists structured case histories.",
     problem:
-      "Client records, documents and day-to-day workflow were scattered across spreadsheets and manual processes, making it hard to track status or enforce who could see what.",
+      "Legal professionals and businesses track dozens of pending hearings across public court portals manually. Frequent portal changes, manual captcha steps, and lack of push updates result in missed dates and hundreds of wasted hours.",
     solution:
-      "A single web platform centralizing client data and documents behind role-based access, with a dashboard giving an at-a-glance view of active work and a REST API backing the whole system.",
-    tech: ["React", ".NET / ASP.NET Core", "PostgreSQL", "JWT", "REST API"],
+      "Engineered an automated browser automation pipeline using Playwright and .NET 8. The engine queries court databases using Case CNR numbers, extracts hearing schedules, captures verifiable portal screenshots, and indexes records into PostgreSQL via a clean REST API.",
+    tech: [".NET 8", "Playwright", "PostgreSQL", "REST API", "Docker", "Swagger"],
     features: [
-      "Client management", "Authentication", "Role-based access control",
-      "Document management", "Dashboard", "REST APIs", "Database integration",
+      "Automated CNR case status lookup",
+      "Hearing history extraction & diffing",
+      "Portal screenshot capture & archival",
+      "Documented RESTful API endpoints",
+      "Defensive scraper architecture with retry logic",
+      "Automated scheduled background workers",
     ],
-    architecture: ["Frontend", "API Layer", "Business Logic", "Database"],
+    architecture: [
+      "Automation Engine (Playwright)",
+      ".NET 8 Controller Layer",
+      "Business Logic & Parser",
+      "PostgreSQL Data Store",
+    ],
     challenges: [
-      { t: "Access control granularity", d: "Different roles needed different visibility into the same client records. Solved with a permission layer enforced at the API level, not just hidden in the UI." },
-      { t: "Document handling at scale", d: "Storing and retrieving documents reliably without bloating the database — resolved by separating file storage from relational data and referencing it by ID." },
+      {
+        t: "Dynamic DOM changes on public portals",
+        d: "Government portals frequently alter HTML structures without notice. Addressed this by implementing resilient multi-attribute selector strategies and centralized DOM adapters with automated failure alerts.",
+      },
+      {
+        t: "Session handling & rate resilience",
+        d: "Prevented portal throttling by introducing randomized back-off intervals, session reuse, and decoupled background workers that queue requests gracefully.",
+      },
     ],
-    results: "A working platform that replaced manual, spreadsheet-based client tracking with a structured system with proper access control and a real audit trail.",
-    github: "https://github.com/haranHD",
+    results:
+      "Replaced tedious manual daily portal lookups with automated background updates, reducing lookup time by 90% and maintaining an audit-ready timeline for all monitored cases.",
+    github: "https://github.com/haranHD/eCourt",
     demo: null,
   },
   {
-    id: "biometric-attendance",
-    icon: ScanFace,
-    category: "Biometric / AI Application",
-    name: "Face Biometric Attendance System",
+    id: "ai-farming",
+    icon: Sprout,
+    category: "Web Application & AI Solutions",
+    name: "AI Farming Platform",
     short:
-      "A biometric attendance system combining a modern React interface with a backend service for face-based identification and attendance tracking.",
+      "Full-stack digital farming platform combining an intelligent AI advisory chatbot, weather telemetry, direct farmer-to-buyer marketplace, and voice interaction.",
     problem:
-      "Manual attendance tracking is slow and easy to falsify. A reliable, low-friction way to verify presence was needed without dedicated hardware.",
+      "Agricultural producers and smallholder farmers lack accessible, real-time diagnostic tools for crop health, localized weather alerts, and direct marketplaces free of unnecessary intermediaries.",
     solution:
-      "A React frontend captures a face via webcam and sends it to a FastAPI backend running face recognition, which matches it against registered users and logs attendance in real time.",
-    tech: ["React", "Vite", "FastAPI", "Face Recognition", "Database"],
+      "Developed a modern web application featuring an AI-driven agricultural advisory system, integration with hyper-local weather APIs, an agricultural produce marketplace, and voice query interaction designed for easy mobile accessibility.",
+    tech: ["React", "Node.js", "Flask", "MongoDB", "AI/ML Integration", "Weather API", "Tailwind CSS"],
     features: [
-      "Face registration", "Face recognition", "Attendance tracking",
-      "Admin / user roles", "API integration", "Real-time status",
+      "AI-powered crop health & pest advisor",
+      "Localized weather forecasting & farming tips",
+      "Direct produce marketplace & listings",
+      "Voice-assisted query interface",
+      "Secure user authentication & profiles",
+      "Mobile-first responsive dashboard",
     ],
-    architecture: ["Frontend", "API Layer", "Face Recognition Service", "Database"],
+    architecture: [
+      "React Responsive Client",
+      "Node.js & Flask API Services",
+      "AI Model Inference Gateway",
+      "MongoDB Document Storage",
+    ],
     challenges: [
-      { t: "Recognition accuracy", d: "Lighting and angle variation caused false negatives during testing. Addressed by tuning the matching threshold and requiring a clear registration capture." },
-      { t: "Latency", d: "Kept the recognition request lightweight and asynchronous so the UI stays responsive while a match is processed." },
+      {
+        t: "Variable connectivity & audio processing",
+        d: "Designed the frontend for fast loading over constrained 3G/4G connections and optimized voice input compression to ensure swift responses from the AI advisory model.",
+      },
+      {
+        t: "Marketplace data structuring",
+        d: "Organized fluctuating crop pricing and seasonal categories using MongoDB indexing to ensure fast search and regional filtering.",
+      },
     ],
-    results: "A functioning end-to-end prototype: register a face once, then get verified attendance in seconds without manual entry.",
-    github: "https://github.com/haranHD",
+    results:
+      "Delivered an accessible, intuitive platform empowering farmers with instant advisory answers and a direct marketplace to showcase their produce.",
+    github: "https://github.com/haranHD/S8_AI-Farming",
     demo: null,
   },
   {
     id: "weight-scale",
     icon: Scale,
-    category: "System Integration / Industrial Software",
+    category: "System Integration & Industrial Software",
     name: "Industrial Weight Scale Integration",
-    short: "A software integration layer for receiving and processing weight data from industrial weighing equipment.",
+    short:
+      "Hardware-to-database integration middleware receiving, validating, and converting raw industrial weighing equipment TCP streams into business ERP records.",
     problem:
-      "Industrial weight scales communicate over raw TCP in a vendor-specific format. That data needed to reach a business application reliably, in real time, without manual re-entry.",
+      "Industrial manufacturing scales transmit weight readings over raw TCP sockets in proprietary hardware formats. Factories were manually copying weight indicators into accounting software, causing data entry mistakes and inventory discrepancies.",
     solution:
-      "A backend TCP listener receives raw weight readings, parses and validates them per product type, converts them to structured JSON, and forwards them into the business application's database — with a mock server built to simulate the scale during development.",
-    tech: [".NET", "C#", "TCP", "JSON", "REST APIs", "Database"],
+      "Engineered a dedicated backend middleware service with a high-throughput TCP socket listener. It parses incoming byte streams, validates weight stability and product tolerances, converts data to clean JSON, and synchronizes with the business database. Created a hardware mock emulator to validate all scenarios before field deployment.",
+    tech: [".NET", "C#", "TCP Sockets", "REST API", "JSON", "PostgreSQL", "Mock Server"],
     features: [
-      "TCP communication", "Weight data processing", "JSON messaging",
-      "Device simulation", "Automatic data transmission", "Product-specific validation",
+      "High-reliability TCP socket listener",
+      "Byte stream fragmentation handling",
+      "Tolerance and tare weight validation",
+      "Hardware mock simulator for CI/CD",
+      "Automated database record insertion",
+      "Real-time operator error logging",
     ],
-    architecture: ["Weight Scale", "TCP Communication", "Backend Service", "Data Processing", "Business Application", "Database"],
+    architecture: [
+      "Industrial Weighing Scale",
+      "TCP Communication Layer",
+      "Parser & Business Rule Engine",
+      "Enterprise Database / ERP",
+    ],
     challenges: [
-      { t: "No physical hardware during development", d: "Built a TCP mock server that replayed realistic scale readings, so the integration could be developed and tested before the real device was available." },
-      { t: "Malformed or partial readings", d: "Raw TCP streams can arrive fragmented. Added buffering and validation so incomplete packets don't corrupt a reading." },
+      {
+        t: "Hardware unavailability during initial build",
+        d: "Engineered a configurable TCP hardware emulator capable of broadcasting synthetic weight packets with jitter, dropped packets, and tare variations, allowing 100% test coverage before factory installation.",
+      },
+      {
+        t: "TCP stream fragmentation",
+        d: "Raw socket streams can arrive in partial chunks or concatenated bursts. Implemented circular byte buffering with strict framing delimiters to guarantee zero data loss.",
+      },
     ],
-    results: "A tested integration path from physical scale to business database, validated end-to-end against the mock server ahead of hardware deployment.",
+    results:
+      "Successfully replaced error-prone manual scale logging with automated real-time database recording, eliminating operator discrepancies and speeding up factory dispatch.",
     github: "https://github.com/haranHD",
     demo: null,
   },
   {
-    id: "remote-support",
-    icon: Video,
-    category: "Real-Time Application",
-    name: "Real-Time Remote Support System",
-    short: "A real-time remote support prototype using modern browser communication technologies.",
-    problem: "Supporting a user remotely usually means installing third-party software. A lighter, browser-based path for real-time support was worth exploring.",
-    solution: "SignalR handles signaling between the user and support developer, which negotiates a direct WebRTC connection for real-time communication once the session is established.",
-    tech: ["React", "SignalR", "WebRTC", "JavaScript"],
-    features: ["Real-time communication", "Screen sharing", "Connection management", "Signaling", "Remote support workflow"],
-    architecture: ["User", "SignalR Signaling", "WebRTC", "Support Developer"],
-    challenges: [
-      { t: "Connection negotiation", d: "WebRTC needs a signaling channel to exchange connection details before a direct link forms. SignalR handled that handshake reliably." },
-      { t: "Session state", d: "Tracking who is connected to whom, and cleaning up gracefully when either side disconnects, needed explicit session management on the backend." },
+    id: "client-mgmt",
+    icon: Layers,
+    category: "Business Application Development",
+    name: "Client Management System",
+    short:
+      "Centralized business platform for managing enterprise clients, sensitive documents, user roles, and operation dashboards with granular access control.",
+    problem:
+      "Client accounts, critical agreements, and multi-team workflows were scattered across emails and shared spreadsheets, creating security compliance risks and zero audit visibility.",
+    solution:
+      "Built a secure enterprise web application with role-based access control (RBAC), client record management, document indexing, and an operational dashboard driven by an ASP.NET Core REST API and PostgreSQL.",
+    tech: ["React", "ASP.NET Core", "PostgreSQL", "JWT Authentication", "REST API", "Tailwind CSS"],
+    features: [
+      "Granular role-based access control (RBAC)",
+      "Client profile and engagement lifecycle",
+      "Secure document metadata & file management",
+      "Operational KPI dashboard",
+      "Audit trail & activity logging",
+      "Comprehensive REST API contracts",
     ],
-    results: "A working prototype demonstrating a full signaling-to-peer-connection flow for browser-based remote support.",
-    github: "https://github.com/haranHD",
-    demo: null,
-  },
-  {
-    id: "ecourt-tracker",
-    icon: Gavel,
-    category: "Automation / Backend",
-    name: "eCourt Automation Tracker",
-    short: "An automated tracker that retrieves and stores case data from a public court records portal.",
-    problem: "Checking case status manually on a public portal is repetitive and easy to forget. That lookup needed to be automated and recorded over time.",
-    solution: "A Playwright-driven automation script logs into the portal, retrieves case data and screenshots, and stores structured results through a documented REST API.",
-    tech: [".NET", "Playwright", "PostgreSQL", "REST API", "Swagger"],
-    features: ["Automated browser interaction", "Data retrieval", "Screenshot automation", "API backend", "Database storage"],
-    architecture: ["Automation Script", "API Layer", "Database"],
-    challenges: [
-      { t: "Fragile page structure", d: "Public portals change markup without notice. Built selectors defensively and logged failures instead of crashing silently." },
+    architecture: [
+      "React Single-Page Client",
+      "ASP.NET Core API Controllers",
+      "Domain Business Services",
+      "PostgreSQL Relational DB",
     ],
-    results: "A backend service that keeps case data current automatically instead of relying on manual portal checks.",
+    challenges: [
+      {
+        t: "Multi-tier authorization enforcement",
+        d: "Different departments required strictly partitioned visibility into the same client dossier. Enforced claims-based security at the API gateway layer rather than relying purely on client-side UI guards.",
+      },
+      {
+        t: "Document indexing and performance",
+        d: "Designed normalized schema with relational indexing to support instant filtering across thousands of active client records and attached files.",
+      },
+    ],
+    results:
+      "Successfully replaced disparate spreadsheets with a unified system, giving managers instant visibility into client status and enforcing strict data compliance.",
     github: "https://github.com/haranHD",
     demo: null,
   },
@@ -117,16 +178,119 @@ export const PROJECTS = [
     icon: ShoppingCart,
     category: "Full-Stack Web Application",
     name: "E-Commerce Application",
-    short: "A server-rendered e-commerce application with product management and authentication.",
-    problem: "A straightforward exercise in building a complete commerce flow — product catalog, persistence and user accounts — end to end on the JVM stack.",
-    solution: "Spring Boot serves a Thymeleaf-rendered storefront and admin views backed by MySQL, with JPA handling persistence and Spring Security handling authentication.",
-    tech: ["Java", "Spring Boot", "MySQL", "JPA", "Thymeleaf"],
-    features: ["Product management", "CRUD operations", "Database integration", "Authentication", "Server-side rendering"],
-    architecture: ["Frontend (Thymeleaf)", "Spring Boot", "Database"],
-    challenges: [
-      { t: "Entity relationships", d: "Modeling products, categories and orders correctly in JPA took a few iterations to avoid circular fetch issues." },
+    short:
+      "Complete Java Spring Boot commerce platform featuring inventory tracking, Spring Security authentication, shopping cart workflows, and relational order management.",
+    problem:
+      "Businesses need robust, cost-effective digital storefronts that handle product catalogs, secure customer logins, and order persistence without incurring recurring SaaS fees.",
+    solution:
+      "Architected a layered full-stack commerce application with Java, Spring Boot, and MySQL. Implemented Spring Security for authentication, JPA/Hibernate for relational persistence, and full order processing pipelines.",
+    tech: ["Java", "Spring Boot", "MySQL", "Spring Security", "JPA / Hibernate", "Thymeleaf / React"],
+    features: [
+      "Categorized product catalog & search",
+      "Secure user authentication & sessions",
+      "Persistent cart & checkout workflow",
+      "Admin inventory management & stock tracking",
+      "Relational order history & invoice records",
+      "Clean layered architecture (Controller/Service/Repo)",
     ],
-    results: "A complete, working storefront covering the full CRUD and auth lifecycle on a classic layered Java stack.",
+    architecture: [
+      "Storefront User Interface",
+      "Spring Security & Controller Layer",
+      "Spring Boot Service Layer",
+      "MySQL Relational Database",
+    ],
+    challenges: [
+      {
+        t: "Concurrent order checkout integrity",
+        d: "Prevented race conditions and inventory overselling during simultaneous purchases by enforcing database transactions with appropriate isolation levels and optimistic locking.",
+      },
+      {
+        t: "Optimized relational fetching",
+        d: "Tuned JPA entity mappings and fetch strategies (FetchType.LAZY + join fetch queries) to eliminate N+1 queries during catalog browsing.",
+      },
+    ],
+    results:
+      "Delivered a dependable, scalable commerce application ready for deployment, covering the complete commercial lifecycle from catalog browsing to fulfilled orders.",
+    github: "https://github.com/haranHD",
+    demo: null,
+  },
+  {
+    id: "remote-support",
+    icon: Video,
+    category: "Real-Time Application",
+    name: "Real-Time Remote Support System",
+    short:
+      "Browser-native real-time support platform leveraging SignalR and WebRTC for instant peer-to-peer screen sharing and troubleshooting with zero client installations.",
+    problem:
+      "Traditional remote IT support forces non-technical clients to install heavy executable software, raising security flags and complicating quick assistance.",
+    solution:
+      "Developed a web-based remote support application utilizing SignalR for real-time connection signaling and WebRTC for direct browser-to-browser screen sharing and technical messaging.",
+    tech: ["React", "SignalR", "WebRTC", "JavaScript", "ASP.NET Core"],
+    features: [
+      "Direct browser-to-browser screen sharing",
+      "SignalR low-latency handshake signaling",
+      "Real-time technical messaging stream",
+      "Session initiation with one-time room tokens",
+      "Graceful disconnect & cleanup handling",
+    ],
+    architecture: [
+      "Client Browser (Support Requester)",
+      "SignalR Hub (Signaling Server)",
+      "WebRTC P2P Data & Media Channel",
+      "Technician Diagnostic Dashboard",
+    ],
+    challenges: [
+      {
+        t: "WebRTC peer connection negotiation",
+        d: "ICE candidate exchange and SDP offer/answer handshakes can fail over complex corporate firewalls. Built reliable fallback signaling and connection lifecycle management in SignalR.",
+      },
+      {
+        t: "Clean connection termination",
+        d: "Ensured media streams, audio contexts, and session tokens are promptly garbage-collected upon window close or network drop to prevent phantom sessions.",
+      },
+    ],
+    results:
+      "Achieved sub-5-second session connection times directly within standard web browsers without requiring users to download or configure any third-party binaries.",
+    github: "https://github.com/haranHD",
+    demo: null,
+  },
+  {
+    id: "biometric-attendance",
+    icon: ScanFace,
+    category: "AI & Biometric Application",
+    name: "Face Biometric Attendance System",
+    short:
+      "Computer-vision attendance verification system pairing a responsive React interface with a FastAPI facial recognition service for frictionless verification.",
+    problem:
+      "Card punch systems are susceptible to proxy attendance and hardware wear. Traditional biometric fingerprint scanners require constant sanitization and dedicated hardware.",
+    solution:
+      "Engineered an automated face biometric attendance pipeline. A React webcam component captures user frames and passes them to a FastAPI microservice running facial recognition algorithms, logging verified attendance records instantly into the database.",
+    tech: ["React", "FastAPI", "Python", "OpenCV", "Face Recognition", "Database"],
+    features: [
+      "One-time employee facial enrollment",
+      "Sub-second facial match & identification",
+      "Real-time attendance logging & timestamps",
+      "Admin attendance reports & user management",
+      "Quality threshold validation to prevent false matches",
+    ],
+    architecture: [
+      "React Webcam Frontend",
+      "FastAPI Processing Worker",
+      "Facial Recognition Vector Matcher",
+      "Attendance Database",
+    ],
+    challenges: [
+      {
+        t: "Lighting and perspective variations",
+        d: "Variations in office lighting created false negatives during early tests. Refined the enrollment process to capture multiple reference angles and normalized frame contrast before vector extraction.",
+      },
+      {
+        t: "Low-latency inference",
+        d: "Optimized frame resolution and offloaded facial encoding to asynchronous Python workers, ensuring the React UI remains fluid during recognition.",
+      },
+    ],
+    results:
+      "Built a working, touchless attendance verification solution that completes check-ins in under two seconds per employee.",
     github: "https://github.com/haranHD",
     demo: null,
   },

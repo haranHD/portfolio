@@ -1,10 +1,18 @@
 export const STATS = [
-  { value: "6+", label: "Real-World Projects" },
-  { value: "5+", label: "Technology Areas" },
-  { value: "Full-Stack", label: "Frontend → Backend → Database" },
-  { value: "End-to-End", label: "Development & Integration" },
+  { value: "7+", label: "Projects Built", sub: "Web apps, APIs, integrations" },
+  { value: "Full-Stack", label: "End-to-End", sub: "Frontend → Backend → DB" },
+  { value: "Production", label: "Client-Ready", sub: "Clean code & secure auth" },
+  { value: "1-on-1", label: "Direct Delivery", sub: "Transparent milestones" },
 ];
 
-export const TECH_ROW = [
-  "React", "Java", "Spring Boot", ".NET", "Node.js", "PostgreSQL", "MongoDB", "Docker",
+export const CORE_TECH_PILLS = [
+  "Java",
+  "Spring Boot",
+  "React",
+  "Node.js",
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "REST APIs",
+  "Docker",
 ];

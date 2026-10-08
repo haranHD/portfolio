@@ -1,19 +1,42 @@
 export const PROCESS = [
-  { n: "01", title: "Understand", desc: "Understand the business requirement and the problem behind it." },
-  { n: "02", title: "Plan", desc: "Design the architecture, database and user flow." },
-  { n: "03", title: "Build", desc: "Develop the frontend, backend and APIs." },
-  { n: "04", title: "Integrate", desc: "Connect databases, external APIs and other systems." },
-  { n: "05", title: "Test", desc: "Validate functionality, security and reliability." },
-  { n: "06", title: "Deploy", desc: "Ship the application and configure production infrastructure." },
-  { n: "07", title: "Support", desc: "Provide improvements, maintenance and future development." },
+  {
+    n: "01",
+    title: "Discover",
+    desc: "Understand the core business problem, operational context, user goals, and success metrics before planning any code.",
+    deliverable: "Clear business scope & requirements map",
+  },
+  {
+    n: "02",
+    title: "Plan",
+    desc: "Define the system architecture, database schema, API contracts, security guidelines, and technical approach.",
+    deliverable: "Architecture blueprint & milestone plan",
+  },
+  {
+    n: "03",
+    title: "Build",
+    desc: "Develop the full application using reliable technologies, clean coding standards, and structured component boundaries.",
+    deliverable: "Working frontend, backend & API implementation",
+  },
+  {
+    n: "04",
+    title: "Test",
+    desc: "Validate business logic, API contracts, edge case handling, performance, responsiveness, and operational reliability.",
+    deliverable: "Thoroughly tested & verified codebase",
+  },
+  {
+    n: "05",
+    title: "Deploy",
+    desc: "Configure production hosting, environment secrets, database migrations, and deliver a production-ready solution with documentation.",
+    deliverable: "Live deployment & turnkey handover",
+  },
 ];
 
 export const CASE_STUDY_PROCESS = [
-  { n: "01", title: "Requirement Analysis", desc: "Understanding the business need in detail." },
-  { n: "02", title: "System Design", desc: "Architecture, database schema and API contracts." },
-  { n: "03", title: "UI Development", desc: "Building the frontend interface." },
-  { n: "04", title: "Backend Development", desc: "Implementing business logic and services." },
-  { n: "05", title: "Database Integration", desc: "Connecting persistence and data flows." },
-  { n: "06", title: "Testing", desc: "Validating functionality and edge cases." },
-  { n: "07", title: "Deployment", desc: "Shipping to a production environment." },
+  { n: "01", title: "Discover & Scope", desc: "Understanding the underlying business problem and technical constraints." },
+  { n: "02", title: "Architecture Design", desc: "Modeling data flow, API contracts, and component boundaries." },
+  { n: "03", title: "Frontend Implementation", desc: "Crafting a responsive, intuitive interface tailored to user actions." },
+  { n: "04", title: "Backend & Business Logic", desc: "Engineering resilient APIs, domain logic, and validation rules." },
+  { n: "05", title: "Data & Service Integration", desc: "Connecting databases, external protocols, and authentication layers." },
+  { n: "06", title: "Testing & Validation", desc: "Simulating edge conditions, throughput, and error recovery." },
+  { n: "07", title: "Production Deployment", desc: "Packaging containerized services and delivering production environments." },
 ];

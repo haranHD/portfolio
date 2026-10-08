@@ -1,41 +1,45 @@
 import React, { createContext, useContext, useState, useEffect, useLayoutEffect } from "react";
 
 export const THEMES = {
+  dark: {
+    "--color-bg": "#060b14",
+    "--color-bg-elevated": "#0c1527",
+    "--color-bg-elevated2": "#111d35",
+    "--color-input-bg": "#091120",
+    "--color-nav-bg": "rgba(6, 11, 20, 0.92)",
+    "--color-border": "#1b2a47",
+    "--color-border-light": "#283e67",
+    "--color-ink": "#f8fafc",
+    "--color-ink-secondary": "#e2e8f0",
+    "--color-dim": "#94a3b8",
+    "--color-faint": "#64748b",
+    "--color-accent": "#38bdf8",
+    "--color-accent-hover": "#0ea5e9",
+    "--color-accent-light": "rgba(56, 189, 248, 0.12)",
+    "--color-accent-ink": "#060b14",
+  },
   light: {
-    "--color-bg": "#ffffff",
+    "--color-bg": "#f8fafc",
     "--color-bg-elevated": "#ffffff",
-    "--color-bg-elevated2": "#f8fafc",
+    "--color-bg-elevated2": "#f1f5f9",
+    "--color-input-bg": "#ffffff",
+    "--color-nav-bg": "rgba(248, 250, 252, 0.94)",
     "--color-border": "#e2e8f0",
     "--color-border-light": "#cbd5e1",
     "--color-ink": "#0f172a",
     "--color-ink-secondary": "#1e293b",
     "--color-dim": "#475569",
     "--color-faint": "#64748b",
-    "--color-accent": "#2563eb",
-    "--color-accent-hover": "#1d4ed8",
-    "--color-accent-light": "#eff6ff",
-    "--color-accent-ink": "#ffffff",
-  },
-  dark: {
-    "--color-bg": "#0a0a0b",
-    "--color-bg-elevated": "#131316",
-    "--color-bg-elevated2": "#19191d",
-    "--color-border": "#242428",
-    "--color-border-light": "#2e2e33",
-    "--color-ink": "#ededef",
-    "--color-ink-secondary": "#d1d1d6",
-    "--color-dim": "#96969e",
-    "--color-faint": "#64748b",
-    "--color-accent": "#3b82f6",
-    "--color-accent-hover": "#2563eb",
-    "--color-accent-light": "rgba(59, 130, 246, 0.15)",
+    "--color-accent": "#0284c7",
+    "--color-accent-hover": "#0369a1",
+    "--color-accent-light": "rgba(2, 132, 199, 0.1)",
     "--color-accent-ink": "#ffffff",
   },
 };
 
 export function applyTheme(themeName) {
   const root = document.documentElement;
-  const themeVars = THEMES[themeName] || THEMES.light;
+  const themeVars = THEMES[themeName] || THEMES.dark;
 
   // Set CSS variables directly on root element for guaranteed instant application
   Object.entries(themeVars).forEach(([prop, val]) => {
@@ -47,20 +51,22 @@ export function applyTheme(themeName) {
     document.body.style.color = themeVars["--color-ink"];
   }
 
-  if (themeName === "dark") {
+  if (themeName === "light") {
+    root.classList.remove("dark");
+    root.classList.add("light");
+    root.setAttribute("data-theme", "light");
+  } else {
+    root.classList.remove("light");
     root.classList.add("dark");
     root.setAttribute("data-theme", "dark");
-  } else {
-    root.classList.remove("dark");
-    root.setAttribute("data-theme", "light");
   }
 }
 
 const ThemeContext = createContext({
-  theme: "light",
-  isDark: false,
-  toggleTheme: () => {},
-  setTheme: () => {},
+  theme: "dark",
+  isDark: true,
+  toggleTheme: () => { },
+  setTheme: () => { },
 });
 
 export function ThemeProvider({ children }) {
@@ -68,10 +74,9 @@ export function ThemeProvider({ children }) {
     try {
       const saved = localStorage.getItem("portfolio_theme");
       if (saved === "dark" || saved === "light") return saved;
-      localStorage.removeItem("theme");
-      return "light";
+      return "dark";
     } catch {
-      return "light";
+      return "dark";
     }
   });
 
