@@ -36,8 +36,8 @@ export default function Home() {
       <SEO
         title="Hari Haran — Full-Stack Developer | Freelance Software Solutions"
         description="Professional portfolio of Hari Haran, a Full-Stack Freelance Software Developer specializing in modern web applications, REST APIs, business software, and systems integration using Java, Spring Boot, React, Node.js, MongoDB & MySQL."
-        canonical="https://hariharan.dev/"
-        ogImage="https://hariharan.dev/hariharan-banner.png"
+        canonical="https://portfolio-bme3.vercel.app/"
+        ogImage="https://portfolio-bme3.vercel.app/hariharan-banner.png"
       />
       <Hero />
       <Stats />

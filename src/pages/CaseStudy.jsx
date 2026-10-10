@@ -41,8 +41,8 @@ export default function CaseStudy() {
       <SEO
         title={`${project.name} — Software Case Study | Hari Haran`}
         description={project.short || project.problem}
-        canonical={`https://hariharan.dev/projects/${project.id}`}
-        ogImage="https://hariharan.dev/hariharan-banner.png"
+        canonical={`https://portfolio-bme3.vercel.app/projects/${project.id}`}
+        ogImage="https://portfolio-bme3.vercel.app/hariharan-banner.png"
         ogType="article"
       />
 

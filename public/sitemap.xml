@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://hariharan.dev/</loc>
+    <loc>https://portfolio-bme3.vercel.app/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
 
   <!-- Case Study: eCourt Automation Tracker -->
   <url>
-    <loc>https://hariharan.dev/projects/ecourt-tracker</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/ecourt-tracker</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
 
   <!-- Case Study: AI Farming Platform -->
   <url>
-    <loc>https://hariharan.dev/projects/ai-farming</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/ai-farming</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
 
   <!-- Case Study: Industrial Weight Scale Integration -->
   <url>
-    <loc>https://hariharan.dev/projects/weight-scale-integration</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/weight-scale-integration</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
 
   <!-- Case Study: Client Management System -->
   <url>
-    <loc>https://hariharan.dev/projects/client-management-system</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/client-management-system</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -42,7 +42,7 @@
 
   <!-- Case Study: E-Commerce Application -->
   <url>
-    <loc>https://hariharan.dev/projects/e-commerce-application</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/e-commerce-application</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -50,7 +50,7 @@
 
   <!-- Case Study: Real-Time Remote Support Platform -->
   <url>
-    <loc>https://hariharan.dev/projects/realtime-remote-support</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/realtime-remote-support</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -58,10 +58,9 @@
 
   <!-- Case Study: Biometric Attendance System -->
   <url>
-    <loc>https://hariharan.dev/projects/biometric-attendance-system</loc>
+    <loc>https://portfolio-bme3.vercel.app/projects/biometric-attendance-system</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
-
