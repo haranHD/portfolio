@@ -1,0 +1,7 @@
+# robots.txt for Hari Haran Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://hariharan.dev/sitemap.xml
+

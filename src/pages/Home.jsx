@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO.jsx";
 import Hero from "../sections/Hero.jsx";
 import Stats from "../sections/Stats.jsx";
 import DeveloperIdentitySection from "../sections/DeveloperIdentitySection.jsx";
@@ -32,6 +33,12 @@ export default function Home() {
       transition={{ duration: 0.3 }}
       className="w-full overflow-hidden"
     >
+      <SEO
+        title="Hari Haran — Full-Stack Developer | Freelance Software Solutions"
+        description="Professional portfolio of Hari Haran, a Full-Stack Freelance Software Developer specializing in modern web applications, REST APIs, business software, and systems integration using Java, Spring Boot, React, Node.js, MongoDB & MySQL."
+        canonical="https://hariharan.dev/"
+        ogImage="https://hariharan.dev/hariharan-banner.png"
+      />
       <Hero />
       <Stats />
       <DeveloperIdentitySection />

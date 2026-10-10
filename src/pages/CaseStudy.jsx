@@ -11,8 +11,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PROJECTS } from "../data/projects.js";
+
 import Reveal from "../components/Reveal.jsx";
 import TechPill from "../components/TechPill.jsx";
+import SEO from "../components/SEO.jsx";
 import { PrimaryButton, GhostButton } from "../components/Buttons.jsx";
 
 export default function CaseStudy() {
@@ -36,6 +38,14 @@ export default function CaseStudy() {
       transition={{ duration: 0.3 }}
       className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16"
     >
+      <SEO
+        title={`${project.name} — Software Case Study | Hari Haran`}
+        description={project.short || project.problem}
+        canonical={`https://hariharan.dev/projects/${project.id}`}
+        ogImage="https://hariharan.dev/hariharan-banner.png"
+        ogType="article"
+      />
+
       <Link
         to="/#projects"
         className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-dim mb-6 sm:mb-8 hover:text-accent transition-colors cursor-pointer"
