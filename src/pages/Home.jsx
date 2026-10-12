@@ -34,10 +34,10 @@ export default function Home() {
       className="w-full overflow-hidden"
     >
       <SEO
-        title="Hari Haran — Full-Stack Developer | Freelance Software Solutions"
-        description="Professional portfolio of Hari Haran, a Full-Stack Freelance Software Developer specializing in modern web applications, REST APIs, business software, and systems integration using Java, Spring Boot, React, Node.js, MongoDB & MySQL."
-        canonical="https://portfolio-bme3.vercel.app/"
-        ogImage="https://portfolio-bme3.vercel.app/hariharan-banner.png"
+        title="Hari Haran D — Full-Stack Developer | Freelance Software Solutions"
+        description="Professional portfolio of Hari Haran D, a Full-Stack Freelance Software Developer specializing in modern web applications, REST APIs, business software, and systems integration using Java, Spring Boot, React, Node.js, MongoDB & MySQL."
+        canonical="https://www.solvexatech.in/"
+        ogImage="https://www.solvexatech.in/hariharan-banner.png"
       />
       <Hero />
       <Stats />

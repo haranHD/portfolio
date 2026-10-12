@@ -54,7 +54,7 @@ export default function DeveloperIdentitySection() {
 
               <img
                 src={bannerImg}
-                alt="Hari Haran — Full-Stack Developer: Java, Spring Boot, React, Node.js, MongoDB, MySQL"
+                alt="Hari Haran D — Full-Stack Developer: Java, Spring Boot, React, Node.js, MongoDB, MySQL"
                 className="w-full h-auto object-cover object-center transform group-hover:scale-[1.008] transition-transform duration-500"
                 loading="lazy"
               />
@@ -64,7 +64,7 @@ export default function DeveloperIdentitySection() {
                 <div className="flex items-center gap-2 text-dim">
                   <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
                   <span className="font-mono text-[0.68rem] sm:text-[0.72rem] tracking-wide text-ink font-semibold">
-                    HARI HARAN • OFFICIAL DEVELOPER IDENTITY
+                    HARI HARAN D • OFFICIAL DEVELOPER IDENTITY
                   </span>
                 </div>
                 <div className="flex items-center flex-wrap gap-1.5 sm:gap-2 text-[0.65rem] sm:text-[0.7rem] font-mono text-faint">

@@ -1,6 +1,6 @@
-# robots.txt for Hari Haran Portfolio
+# robots.txt for Hari Haran D Portfolio / Solvexa Tech
 User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://portfolio-bme3.vercel.app/sitemap.xml
+Sitemap: https://www.solvexatech.in/sitemap.xml

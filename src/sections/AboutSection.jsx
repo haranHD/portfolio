@@ -57,7 +57,7 @@ export default function AboutSection() {
             <Reveal delay={0.04}>
               <div className="space-y-3 sm:space-y-4 text-dim text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                 <p>
-                  I am <strong className="text-ink font-semibold">Hari Haran</strong>, a Full-Stack
+                  I am <strong className="text-ink font-semibold">Hari Haran D</strong>, a Full-Stack
                   Software Developer and Freelance Software Professional. I partner with businesses,
                   startups, and organizations to design, engineer, and deploy reliable digital
                   solutions that solve concrete operational problems.

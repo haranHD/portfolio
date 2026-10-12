@@ -39,10 +39,10 @@ export default function CaseStudy() {
       className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16"
     >
       <SEO
-        title={`${project.name} — Software Case Study | Hari Haran`}
+        title={`${project.name} — Software Case Study | Hari Haran D`}
         description={project.short || project.problem}
-        canonical={`https://portfolio-bme3.vercel.app/projects/${project.id}`}
-        ogImage="https://portfolio-bme3.vercel.app/hariharan-banner.png"
+        canonical={`https://www.solvexatech.in/projects/${project.id}`}
+        ogImage="https://www.solvexatech.in/hariharan-banner.png"
         ogType="article"
       />
 

@@ -28,7 +28,7 @@ export default function Footer() {
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-gradient-to-br from-accent to-blue-600 flex items-center justify-center font-display font-bold text-navy-950 text-xs shadow-sm border border-cyan-300/40">
                 HH
               </div>
-              <p className="font-display font-bold text-ink text-sm sm:text-base tracking-tight">HARI HARAN</p>
+              <p className="font-display font-bold text-ink text-sm sm:text-base tracking-tight">HARI HARAN D</p>
               <span className="text-border text-xs">•</span>
               <p className="font-mono text-xs text-accent">Full-Stack Developer</p>
             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-5 sm:pt-6 text-xs text-faint font-mono text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Hari Haran. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Hari Haran D. All rights reserved.</p>
           <p className="text-[0.68rem] sm:text-[0.72rem] text-dim">
             Freelance Software Developer • Global & Remote
           </p>

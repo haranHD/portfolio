@@ -86,7 +86,7 @@ export default function Hero() {
                     href="mailto:haricode04@gmail.com"
                     className="p-2.5 sm:p-3 rounded-xl border border-border/80 bg-bgElevated text-dim hover:text-cyan-300 hover:border-accent/50 hover:bg-bgElevated2 transition-all cursor-pointer"
                     title="Send Email"
-                    aria-label="Email Hari Haran"
+                    aria-label="Email Hari Haran D"
                   >
                     <Mail size={17} />
                   </a>
@@ -147,7 +147,7 @@ export default function Hero() {
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
                     <img
                       src={portraitImg}
-                      alt="Hari Haran — Full-Stack Developer & Freelance Software Professional"
+                      alt="Hari Haran D — Full-Stack Developer & Freelance Software Professional"
                       className="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-500"
                       loading="eager"
                     />
@@ -161,7 +161,7 @@ export default function Hero() {
                     <div className="flex items-center justify-between gap-2">
                       <div>
                         <div className="flex items-center gap-1.5">
-                          <p className="font-display font-bold text-xs sm:text-sm text-ink">Hari Haran</p>
+                          <p className="font-display font-bold text-xs sm:text-sm text-ink">Hari Haran D</p>
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                         </div>
                         <p className="font-mono text-[0.62rem] sm:text-[0.68rem] text-accent tracking-wide uppercase">

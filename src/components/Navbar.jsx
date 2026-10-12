@@ -33,11 +33,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-navBg backdrop-blur-md border-b border-border shadow-card"
-          : "bg-navBg backdrop-blur-sm border-b border-border/40"
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-navBg backdrop-blur-md border-b border-border shadow-card"
+        : "bg-navBg backdrop-blur-sm border-b border-border/40"
+        }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3.5">
         {/* Brand Mark */}
@@ -51,7 +50,7 @@ export default function Navbar() {
             </div>
             <div>
               <p className="font-display font-bold text-sm sm:text-[1.05rem] text-ink tracking-tight group-hover:text-accent transition-colors leading-none mb-0.5 sm:mb-1">
-                HARI HARAN
+                HARI HARAN D
               </p>
               <p className="font-mono text-[0.58rem] sm:text-[0.62rem] text-accent/80 tracking-[0.18em] uppercase leading-none">
                 FULL-STACK DEVELOPER
